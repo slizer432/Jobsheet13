@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Percobaan2 {
+
     static int hitungPangkat (int x, int y) {
         if (y == 0) {
             return 1;
@@ -8,6 +9,16 @@ public class Percobaan2 {
             return (x * hitungPangkat(x, y - 1));
         }
     }
+
+    static void cetakPangkat(int x, int y){
+        if (y == 0){
+            System.out.println("1");
+        } else {
+            System.out.print(x + "x");
+            cetakPangkat(x, y - 1);
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int bilangan, pangkat;
@@ -18,6 +29,8 @@ public class Percobaan2 {
         pangkat = sc.nextInt();
 
         System.out.println("Hasil perpangkatan : " + hitungPangkat(bilangan, pangkat));
+        
+        cetakPangkat(bilangan, pangkat);
     }            
 }
     
